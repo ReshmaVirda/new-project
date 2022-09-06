@@ -1,0 +1,70 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django HTMLtoPDF Tutorial</title>
+</head>
+<body>
+    <h1>HTML To PDF</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Amount</td>
+                <td>Source</td>
+                <td>Income_To</td>
+                <td>Income_From</td>
+                <td>Expense</td>
+                <td>Goal</td>
+                <td>Location</td>
+                <td>Periodic</td>
+                <td>Tags</td>
+                <td>Created_At</td>
+                <td>Modified_At</td>
+            </tr>
+        </thead>
+        {% for i in transactions %}
+        <tbody>
+            <td>{{i.id}}</td>
+            
+            <td>{{i.title}}</td>
+            
+           
+            <td>{{i.description}}</td>
+           
+            
+            <td>{{i.amount}}</td>
+            
+
+            
+            <td>{{i.source}}</td>
+            
+          
+            
+            <td>{{i.income_to}}</td>
+            
+            
+            <td>{{i.income_from}}</td>
+            
+            <td>{{i.expense}}</td>
+            
+            <td>{{i.goal}}</td>
+            
+            <td>{{i.location}}</td>
+            
+            <td>{{i.periodic}}</td>
+           
+            <td>{{i.tag}} | list2str</td>
+           
+            <td>{{i.created_at}}</td>
+           
+            <td>{{i.modified_at}}</td>
+            
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>
